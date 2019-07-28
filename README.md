@@ -5,3 +5,22 @@ Tool transforms program of Letní filmová škola Uherské Hradiště (https://p
 ## Result
 
 ![Google calendar](https://github.com/brabemi/LFS-events/blob/master/lfs.png "Google calendar")
+
+## Setup
+ 
+### Virtual environment
+```
+python3 -m venv venv
+. venv/bin/activate
+```
+
+### Install requirements
+```
+python -m pip install -r requirements.txt
+```
+## Run
+
+```
+python lfs.py 
+```
+Creates CSV file event.csv
