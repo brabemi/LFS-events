@@ -110,12 +110,16 @@ def main():
             proj['Subject'] = movie['title']
 
             s = projection['start_time']
-            proj['Start Date'] = '{}/{}/{}'.format(s.month, s.day, s.year)
+            #proj['Start Date'] = '{:02d}/{:02d}/{}'.format(s.month, s.day, s.year)
+            proj['Start Date'] = '{:02d}/{:02d}/{}'.format(s.day,s.month, s.year)
             proj['Start Time'] = '{}:{:02d}'.format(s.hour, s.minute)
+            #proj['Start Time'] = datetime.strptime('{}:{:02d}'.format(s.hour, s.minute), "%H:%M").strftime("%I:%M %p")
 
             e = projection['end_time']
-            proj['End Date'] = '{}/{}/{}'.format(e.month, e.day, e.year)
+            #proj['End Date'] = '{:02d}/{:02d}/{}'.format(e.month, e.day, e.year)
+            proj['End Date'] = '{:02d}/{:02d}/{}'.format(e.day,e.month, e.year)
             proj['End Time'] = '{}:{:02d}'.format(e.hour, e.minute)
+            #proj['End Time'] = datetime.strptime('{}:{:02d}'.format(e.hour, e.minute), "%H:%M").strftime("%I:%M %p")
             proj['All Day Event'] = False
 
             proj['Description'] = movie['description']
