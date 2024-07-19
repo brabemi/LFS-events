@@ -33,7 +33,8 @@ def get_title(soup):
 def get_description(soup):
     # <div class="fg-detail-description"> Rintaro / Japonsko 1979 / 129 min. / 15 let / Blu-ray </div>
     description = soup.find_all("div", {'class': 'fg-detail-description'})[0].string
-    logline = soup.find_all("div", {'class': 'fg-detail-logline'})[0].string
+    logline = soup.find_all("div", {'class': 'fg-detail-logline'})
+    logline = logline[0].string if logline else ''
     logline = logline.strip() if logline else ''
     return ' '.join(description.split()) + '\n' + logline
 
